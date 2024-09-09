@@ -1,7 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using AdatbazisKapcsolat.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<AdatbázisKapcsolat>(options => options.UseSqlite(connectionString: "Data Source = Adatbazis.db"));
+
 
 var app = builder.Build();
 
